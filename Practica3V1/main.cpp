@@ -65,6 +65,6 @@ qInfo() << pokrand.setRand();*/
         Pokebola *pokB{pokebola[var1]};
         pokB->infoPB();
     }
-
+//Prueba main
     return a.exec();
 }
