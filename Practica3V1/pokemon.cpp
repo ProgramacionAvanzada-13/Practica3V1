@@ -14,13 +14,13 @@ Pokemon::Pokemon(int num, QObject *parent)
 {
     ID=num;
     qInfo() << "Construyendo un pokemon con identificador : " << ID;
-    setVida(); //Este pokemon es un objeto que puede llamar funciones del objeto;
+    /*setVida(); //Este pokemon es un objeto que puede llamar funciones del objeto;
     setNombre();
     getNombre();
     CalcAtaque();
     Sleep(1);
     CalcDefensa();
-    //infoPokemon();
+    //infoPokemon();*/
 }
 
 Pokemon::~Pokemon()

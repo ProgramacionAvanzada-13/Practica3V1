@@ -1,9 +1,10 @@
 #include <QCoreApplication>
-#include <QDebug>
+/*#include <QDebug>
 #include <iostream>
+#include <windows.h>
 
 #include "pokemon.h"
-#include "pokebola.h"
+#include "pokebola.h"*/
 
 using namespace std;
 
@@ -11,14 +12,20 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+    qInfo() << "Vacio";
+
+    return a.exec();
+}
+
+/*
     qInfo() << "Esta es uuna practica sobre pokemones";
 
     qInfo() << "Ingrese el numero de pokemones que quiere hacer pelear : ";
     int numPok;
     cin >> numPok;
 
-    Pokemon* pokemon[numPok]; //Declaramos un vector de referencias pokemon de longitud numPok
-    Pokebola* pokebola[numPok]; //Declaramos un vector de pokebolas
+    //Pokemon* pokemon[numPok]; //Declaramos un vector de referencias pokemon de longitud numPok
+    //Pokebola* pokebola[numPok]; //Declaramos un vector de pokebolas
 
     //Estacion* canales[3];
     //canales[0] = new Estacion{&radio, 1130, "La Ke-Buena"};
@@ -27,23 +34,29 @@ int main(int argc, char *argv[])
 
     int var1;
     for(var1=0; var1<numPok; var1++){
-        qInfo() << "++++++++++++++++++++++++++++++++++++++++";
+        qInfo() << "********************************************************";
         pokemon[var1] = new Pokemon(var1+1); //Creamos un nuevo pokemon que estará en la posición var1 de nuestro vector de pokemones
         Pokemon *pok{pokemon[var1]}; //Creamos un pokemon inicializado con nuestro pokemon[var1]
-        /*
-    pok->setVida(); //Este pokemon es un objeto que puede llamar funciones del objeto;
-    pok->setNombre();
-    pok->getNombre();
-    pok->infoPokemon();
-    */
+
+        qInfo() << "Vida";
+        pok->setVida(); //Este pokemon es un objeto que puede llamar funciones del objeto;
+        pok->setNombre();
+        qInfo() << "Nombre";
+        pok->getNombre();
+        qInfo() << "Ataque";
+        pok->CalcAtaque();
+        Sleep(1);
+        qInfo() << "Defensa";
+        pok->CalcDefensa();
+        qInfo() << "Informacion";
         pok->infoPokemon();
     }
-
-    /* Des esta manera accedo a la informacion de un solo pokemon
+*/
+/* Des esta manera accedo a la informacion de un solo pokemon
 Pokemon &pokemon3 = *pokemon[2];
 pokemon3.infoPokemon();
 */
-    /* Generador de numeros aleatorios para el pokemon
+/* Generador de numeros aleatorios para el pokemon
 Pokemon &pokrand = *pokemon[2];
 qInfo() << pokrand.setRand();
 qInfo() << pokrand.setRand();
@@ -51,8 +64,12 @@ qInfo() << pokrand.setRand();
 qInfo() << pokrand.setRand();
 qInfo() << pokrand.setRand();
 qInfo() << pokrand.setRand();*/
-
-    Pokemon &pokrand = *pokemon[2];
+/*
+    qInfo() << "------------------------------------------";
+    Pokemon *pok2{pokemon[0]};
+    //pokemon[1]->infoPokemon();
+    pok2->infoPokemon();
+    qInfo() << "------------------------------------------";
 
     //Pokebola pokB(pokrand);
 
@@ -60,11 +77,15 @@ qInfo() << pokrand.setRand();*/
 
     int var2;
     for(var2=0; var2<numPok; var2++){
-        qInfo() << "++++++++++++++++++++++++++++++++++++++++";
+        qInfo() << "*******************************************";
         pokebola[var1] = new Pokebola(); //Creamos un nuevo pokemon que estará en la posición var1 de nuestro vector de pokemones
-        Pokebola *pokB{pokebola[var1]};
+        Pokebola *pokB{pokebola[var2]};
+
         pokB->infoPB();
     }
-//Prueba main
-    return a.exec();
-}
+
+    qInfo() << "------------------------------------------";
+    Pokebola &pokrandB = *pokebola[2];
+    pokrandB.infoPB();
+    qInfo() << "------------------------------------------";
+//Prueba main*/

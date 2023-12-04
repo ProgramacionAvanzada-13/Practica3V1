@@ -3,7 +3,7 @@
 Pokebola::Pokebola()
 {
     qInfo() << "Construyendo una pokebola";
-    setIDPB();
+    //setIDPB();
 }
 
 Pokebola::~Pokebola()
