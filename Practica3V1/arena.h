@@ -8,6 +8,7 @@ class Arena
 
 public:
     Arena();
+    ~Arena();
 };
 
 #endif // ARENA_H
